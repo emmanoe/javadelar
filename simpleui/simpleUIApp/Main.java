@@ -13,13 +13,20 @@ public class Main {
 		/*
 		 * Randomly position 25 Ships in the Arena zone (defined afterwards)
 		 */
-		for (int i = 0; i < 25; i++) {
-			testItemList.add(new SpaceShip(random.nextInt(400), random.nextInt(500), 10));
+		
+		testItemList.add(new Planet(random.nextInt(130)+ 30, random.nextInt(440) + 30 , 60));
+		testItemList.add(new Planet(random.nextInt(130)+210, random.nextInt(440) + 30, 60));
+		
+		int i = 0;
+		int x, y;
+		while(i<25){
+			x = random.nextInt(400); y = random.nextInt(500);
+			testItemList.add(new SpaceShip(x, y, 10));
+			if (!testItemList.get(0).contains(testItemList.get(i+2).center) && !testItemList.get(1).contains(testItemList.get(i+2).center)){
+				i++;
+			}
 		}
 		
-		/*
-		 * Create 2 separate planets
-		 */
 		
 		Manager manager = new Manager();
 		Run r = new Run(400, 500);

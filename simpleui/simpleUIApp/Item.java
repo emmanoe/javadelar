@@ -7,6 +7,7 @@ import java.awt.geom.Point2D;
  * Any graphical element that will be handle by the application.
  *
  */
+
 abstract class Item {
 
 	protected final Point2D center;
@@ -26,8 +27,6 @@ abstract class Item {
 	}
 
 	public abstract void move();
-	
-	public abstract void aura();
 
 	public abstract void draw(Graphics2D arg0);
 

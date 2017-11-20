@@ -56,10 +56,4 @@ class SpaceShip extends Item {
 		arg0.setColor(Color.blue);
 		arg0.fillRect(x - w / 2, y - w / 2, w, w);
 	}
-
-	@Override
-	public void aura() {
-		// nothing TODO Auto-generated method stub
-		
-	}
 }

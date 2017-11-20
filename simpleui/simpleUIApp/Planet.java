@@ -30,8 +30,9 @@ public class Planet extends Item {
 	}
 
 	@Override
-	public void aura() {
-				
-	}
-	
+	public void move() {}
+
+	@Override
+	public void setObjective(Item o) {}
+
 }
