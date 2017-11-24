@@ -1,5 +1,6 @@
 package simpleUIApp;
 
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,17 +15,18 @@ public class Main {
 		 * Randomly position 25 Ships in the Arena zone (defined afterwards)
 		 */
 		
-		testItemList.add(new Planet(random.nextInt(130)+ 30, random.nextInt(440) + 30 , 60));
-		testItemList.add(new Planet(random.nextInt(130)+210, random.nextInt(440) + 30, 60));
+		testItemList.add(new Planet(random.nextInt(130)+ 30, random.nextInt(440) + 30 , 40));
+		testItemList.add(new Planet(random.nextInt(130)+210, random.nextInt(440) + 30, 40));
 		
 		int i = 0;
-		int x, y;
+		
 		while(i<25){
-			x = random.nextInt(400); y = random.nextInt(500);
-			testItemList.add(new SpaceShip(x, y, 10));
-			if (!testItemList.get(0).contains(testItemList.get(i+2).center) && !testItemList.get(1).contains(testItemList.get(i+2).center)){
-				i++;
+			Point2D.Double point = new Point2D.Double(random.nextInt(400),random.nextInt(500));
+			while (testItemList.get(0).contains(point) && testItemList.get(1).contains(point)){
+				point.setLocation(random.nextInt(400), random.nextInt(500));
 			}
+			testItemList.add(new SpaceShip(point.getX(), point.getY(), 10));
+			i++;
 		}
 		
 		

@@ -25,7 +25,7 @@ public class Planet extends Item {
 	public void draw(Graphics2D arg0) {
 		Point2D pos = this.center;
 		int x = (int) pos.getX(), y = (int) pos.getY(), w = this.getWidth();
-		arg0.setColor(Color.blue);
+		arg0.setColor(Color.yellow);
 		arg0.fillRect(x - w / 2, y - w / 2, w, w);
 	}
 
