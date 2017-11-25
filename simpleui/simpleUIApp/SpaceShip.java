@@ -29,7 +29,8 @@ class SpaceShip extends Item {
 	}
 
 	public void move() {
-
+		
+		
 		if (!objective.contains(this.center)) {
 			double newx = center.getX();
 			double newy = center.getY();

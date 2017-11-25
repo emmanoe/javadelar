@@ -12,6 +12,7 @@ abstract class Item {
 
 	protected final Point2D center;
 	private final int width;
+	protected int owner;
 
 	public Item(double x, double y, int w) {
 		center = new Point2D.Double(x, y);

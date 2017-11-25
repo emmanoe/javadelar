@@ -40,9 +40,10 @@ public class MouseListener implements MouseHandler<Item> {
 		if (!arg0.isEmpty()) {
 			for (Item item : dragList) {
 				item.setObjective(arg0.get(0));
-			}
+				}
 		}
 	}
+			
 
 	@Override
 	public void mouseOver(List<Item> arg0, KeyPress arg1) {

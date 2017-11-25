@@ -17,7 +17,8 @@ public class Main {
 		
 		testItemList.add(new Planet(random.nextInt(130)+ 30, random.nextInt(440) + 30 , 40));
 		testItemList.add(new Planet(random.nextInt(130)+210, random.nextInt(440) + 30, 40));
-		
+		testItemList.add(new SpaceShip(testItemList.get(0).getLocation().getX(), testItemList.get(0).getLocation().getY(), 10));
+		/*
 		int i = 0;
 		
 		while(i<25){
@@ -27,7 +28,7 @@ public class Main {
 			}
 			testItemList.add(new SpaceShip(point.getX(), point.getY(), 10));
 			i++;
-		}
+		}*/
 		
 		
 		Manager manager = new Manager();

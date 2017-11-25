@@ -3,9 +3,20 @@ package simpleUIApp;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 
 public class Planet extends Item {
 	
+	private ArrayList<SpaceShip> spaceShipList;
+	
+	public ArrayList<SpaceShip> getSpaceShipsList() {
+		return spaceShipList;
+	}
+
+	public void setSpaceShipsList(ArrayList<SpaceShip> spaceShipsList) {
+		this.spaceShipList = spaceShipsList;
+	}
+
 	public Planet(double x, double y, int w) {
 		super(x, y, w);
 	}
@@ -31,6 +42,7 @@ public class Planet extends Item {
 
 	@Override
 	public void move() {}
+	
 
 	@Override
 	public void setObjective(Item o) {}
