@@ -12,12 +12,30 @@ public class Main {
 		
 		ArrayList<Item> testItemList = new ArrayList<Item>();
 		/*
-		 * Randomly position 25 Ships in the Arena zone (defined afterwards)
+		 * Assign 2 planets per players
 		 */
 		
-		testItemList.add(new Planet(random.nextInt(130)+ 30, random.nextInt(440) + 30 , 40));
-		testItemList.add(new Planet(random.nextInt(130)+210, random.nextInt(440) + 30, 40));
-		testItemList.add(new SpaceShip(testItemList.get(0).getLocation().getX(), testItemList.get(0).getLocation().getY(), 10));
+		testItemList.add(new Planet(random.nextInt(130)+ 30, random.nextInt(220) + 30 , 40,1));
+		testItemList.add(new Planet(random.nextInt(130)+210, random.nextInt(220) + 30, 40,2));
+		
+		/*
+		 * Set the space ships in their planet
+		 */
+		for(int i=0;i<5;i++) {
+			testItemList.add(new SpaceShip(testItemList.get(0).getLocation().getX()+i*3, testItemList.get(0).getLocation().getY()+i*3, 10,0));
+			((Planet) testItemList.get(0)).setSpaceShipsList(testItemList);
+		}
+		ArrayList<Item> fiveElemArray = new ArrayList<Item>();
+		for (int i = 0; i<5; i++)
+			fiveElemArray.add(new SpaceShip(testItemList.get(0).getLocation().getX(), testItemList.get(0).getLocation().getY()+i*3, 10,1));
+		((Planet) testItemList.get(1)).setSpaceShipsList(fiveElemArray);
+		
+		/*
+		 * Generates neutral planets
+		 */
+		for(int i=0;i< random.nextInt(2)+1;i++) {
+			testItemList.add(new Planet(random.nextInt(370)+30, random.nextInt(220) + 250, 40,0));
+		}
 		/*
 		int i = 0;
 		

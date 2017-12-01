@@ -8,8 +8,8 @@ class SpaceShip extends Item {
 
 	private Item objective;
 
-	public SpaceShip(double x, double y, int w) {
-		super(x, y, w);
+	public SpaceShip(double x, double y, int w, int o) {
+		super(x, y, w, o);
 		objective = this;
 	}
 
@@ -29,8 +29,7 @@ class SpaceShip extends Item {
 	}
 
 	public void move() {
-		
-		
+				
 		if (!objective.contains(this.center)) {
 			double newx = center.getX();
 			double newy = center.getY();
@@ -48,6 +47,18 @@ class SpaceShip extends Item {
 		} else {
 			objective = this;
 		}
+	}
+	
+	/*
+	 * Attack the objective by increase or decrease the number of space ships
+	 */
+	public void attack() {
+		if(this.objective.owner == this.owner) {
+			((Planet)this.objective).setStock(((Planet)this.objective).getStock()+1);
+		}
+		else
+			((Planet)this.objective).removeSpaceship(0);
+		System.out.println("Stock =" +((Planet)this.objective).stockSize());
 	}
 
 	@Override

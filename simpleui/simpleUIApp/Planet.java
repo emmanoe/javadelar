@@ -7,18 +7,35 @@ import java.util.ArrayList;
 
 public class Planet extends Item {
 	
-	private ArrayList<SpaceShip> spaceShipList;
-	
-	public ArrayList<SpaceShip> getSpaceShipsList() {
+	private ArrayList<Item> spaceShipList; 
+	private int stock; 
+
+	public Planet(double x, double y, int w, int o) {
+		super(x, y, w,o);
+	}
+		
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public ArrayList<Item> getSpaceShipsList() {
 		return spaceShipList;
 	}
-
-	public void setSpaceShipsList(ArrayList<SpaceShip> spaceShipsList) {
-		this.spaceShipList = spaceShipsList;
+	
+	public int stockSize() {
+		return spaceShipList.size();
 	}
 
-	public Planet(double x, double y, int w) {
-		super(x, y, w);
+	public void setSpaceShipsList(ArrayList<Item> spaceShipsList) {
+		this.spaceShipList = spaceShipsList;
+	}
+	
+	public void removeSpaceship(int index) {
+		this.spaceShipList.remove(index);
 	}
 	
 	private static double squareDistance(Point2D p1, Point2D p2) {
@@ -36,15 +53,29 @@ public class Planet extends Item {
 	public void draw(Graphics2D arg0) {
 		Point2D pos = this.center;
 		int x = (int) pos.getX(), y = (int) pos.getY(), w = this.getWidth();
-		arg0.setColor(Color.yellow);
+		if(this.owner == 0)
+			arg0.setColor(Color.GRAY);
+		else if(this.owner == 1)
+			arg0.setColor(Color.blue);
+		else
+			arg0.setColor(Color.magenta);
 		arg0.fillRect(x - w / 2, y - w / 2, w, w);
+		
 	}
 
 	@Override
 	public void move() {}
 	
+	public void createSpaceShips() {
+		
+	}
+	
 
 	@Override
-	public void setObjective(Item o) {}
-
+	public void setObjective(Item o) {
+		for(int i=0;i<5;i++) {
+			this.spaceShipList.get(i+2).setObjective(o);
+			((SpaceShip)this.spaceShipList.get(i+2)).attack();
+			}
+	}
 }

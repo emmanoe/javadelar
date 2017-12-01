@@ -14,9 +14,10 @@ abstract class Item {
 	private final int width;
 	protected int owner;
 
-	public Item(double x, double y, int w) {
+	public Item(double x, double y, int w, int o) {
 		center = new Point2D.Double(x, y);
 		width = w;
+		owner = o;
 	}
 
 	public Point2D getLocation() {
