@@ -22,7 +22,7 @@ public class Main {
 		 * Set the space ships in their planet
 		 */
 		for(int i=0;i<5;i++) {
-			testItemList.add(new SpaceShip(testItemList.get(0).getLocation().getX()+i*3, testItemList.get(0).getLocation().getY()+i*3, 10,0));
+			testItemList.add(new SpaceShip(testItemList.get(0).getLocation().getX()+i*8, testItemList.get(0).getLocation().getY()+i*8, 5,0));
 			((Planet) testItemList.get(0)).setSpaceShipsList(testItemList);
 		}
 		ArrayList<Item> fiveElemArray = new ArrayList<Item>();
