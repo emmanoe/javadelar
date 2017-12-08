@@ -54,6 +54,8 @@ public class Run implements ApplicationRunnable<Item> {
 
 			public void run(TimerTask timerTask) {
 				arg0.refresh();
+				((Planet)arg1.toArray()[0]).incrSpaceShips();
+				((Planet)arg1.toArray()[1]).incrSpaceShips();
 				for (Item item : arg1) {
 					item.move();
 				}

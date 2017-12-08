@@ -10,7 +10,6 @@ class SpaceShip extends Item {
 
 	public SpaceShip(double x, double y, int w, int o) {
 		super(x, y, w, o);
-		objective = this;
 	}
 
 	public void setObjective(Item o) {
@@ -29,35 +28,37 @@ class SpaceShip extends Item {
 	}
 
 	public void move() {
-				
-		if (!objective.contains(this.center)) {
-			double newx = center.getX();
-			double newy = center.getY();
-			if (newx > objective.getLocation().getX()) {
-				newx--;
-			} else {
-				newx++;
+			if(objective != null) {	
+				if (!objective.contains(this.center)) {
+					double newx = center.getX();
+					double newy = center.getY();
+					if (newx > objective.getLocation().getX()) {
+						newx--;
+					} else {
+						newx++;
+					}
+					if (newy > objective.getLocation().getY()) {
+						newy--;
+					} else {
+						newy++;
+					}
+					center.setLocation(newx, newy);
+					}else {
+						objective = this;
+						}
+				}
 			}
-			if (newy > objective.getLocation().getY()) {
-				newy--;
-			} else {
-				newy++;
-			}
-			center.setLocation(newx, newy);
-		} else {
-			objective = this;
-		}
-	}
-	
 	/*
 	 * Attack the objective by increase or decrease the number of space ships
 	 */
 	public void attack() {
 		if(this.objective.owner == this.owner) {
-			((Planet)this.objective).setStock(((Planet)this.objective).getStock()+1);
+			System.out.println("coucou");
+			//((Planet)this.objective).setStock(((Planet)this.objective).stockSize()+1);
 		}
-		else
-			((Planet)this.objective).removeSpaceship(0);
+		else {
+			((Planet)this.objective).destructSpaceship(0);
+		}
 		System.out.println("Stock =" +((Planet)this.objective).stockSize());
 	}
 
@@ -65,7 +66,10 @@ class SpaceShip extends Item {
 	public void draw(Graphics2D arg0) {
 		Point2D pos = this.center;
 		int x = (int) pos.getX(), y = (int) pos.getY(), w = this.getWidth();
-		arg0.setColor(Color.blue);
+		if (this.owner == 1)
+			arg0.setColor(Color.blue);
+		if (this.owner == 2)
+				arg0.setColor(Color.magenta);
 		arg0.fillRect(x - w / 2, y - w / 2, w, w);
 	}
 }

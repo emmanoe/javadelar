@@ -27,7 +27,11 @@ abstract class Item {
 	public int getWidth() {
 		return width;
 	}
-
+	
+	public int getOwner() {
+		return owner;
+	}
+	
 	public abstract void move();
 
 	public abstract void draw(Graphics2D arg0);
