@@ -36,6 +36,11 @@ public class Main {
 		
 		/*
 		 * Set all the space ships list in their planet (start from objectList index 4)
+		 * @param:
+		 * x: space ship x position
+		 * y: space ship y position
+		 * w: space ship width
+		 * o: owner of the space ship 
 		 */
 		
 		for(int i=0;i<500;i++) {

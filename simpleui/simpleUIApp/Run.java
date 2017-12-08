@@ -56,6 +56,8 @@ public class Run implements ApplicationRunnable<Item> {
 				arg0.refresh();
 				((Planet)arg1.toArray()[0]).incrSpaceShips();
 				((Planet)arg1.toArray()[1]).incrSpaceShips();
+				((Planet)arg1.toArray()[2]).incrSpaceShips();
+				((Planet)arg1.toArray()[3]).incrSpaceShips();
 				for (Item item : arg1) {
 					item.move();
 				}

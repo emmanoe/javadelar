@@ -7,6 +7,8 @@ import java.awt.geom.Point2D;
 class SpaceShip extends Item {
 
 	private Item objective;
+	private int strength = 1; // Space ship attack power
+	private int speed = 4; // Space ship fastness
 
 	public SpaceShip(double x, double y, int w, int o) {
 		super(x, y, w, o);
@@ -14,6 +16,10 @@ class SpaceShip extends Item {
 
 	public void setObjective(Item o) {
 		this.objective = o;
+	}
+	
+	public int getStrength() {
+		return this.strength;
 	}
 
 	private static double squareDistance(Point2D p1, Point2D p2) {
@@ -33,19 +39,19 @@ class SpaceShip extends Item {
 					double newx = center.getX();
 					double newy = center.getY();
 					if (newx > objective.getLocation().getX()) {
-						newx--;
+						newx-= this.speed;
 					} else {
-						newx++;
+						newx+= this.speed;
 					}
 					if (newy > objective.getLocation().getY()) {
-						newy--;
+						newy-= this.speed;
 					} else {
-						newy++;
+						newy+= this.speed;
 					}
 					center.setLocation(newx, newy);
 					}else {
 						objective = this;
-						}
+						}			
 				}
 			}
 	/*

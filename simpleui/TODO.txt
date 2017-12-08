@@ -6,6 +6,12 @@ tant que les vaisseaux ne sont pas arrivés ne pas detruire !
 
 jessayais de decrementer le nombre de spaceship apres un ordre d invasion en ajoutant un attribut nb_spaceShip //fait
 
+positionner les vaisseaux sur chaqu'une des planetes 
+
 deplacer x vaisseaux en un clic 
 
 faire disparaitre un vaisseau qui envahie une planete
+
+changer timer pour aller plus vite test !
+
+eviter planete
