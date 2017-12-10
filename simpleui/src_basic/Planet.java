@@ -104,23 +104,22 @@ public class Planet extends Item {
 	
 	@Override
 	public void setObjective(Item o) {
-		createSpaceShips();
-		int attackStrength;
-		for(int i=team; i<5; i++) {
-			System.out.println(i);
-			this.spaceShipList.get(i+4).setObjective(o);
-			if (((Planet)o).nb_spaceShip > 0 && ((Planet)o).getOwner() != this.owner ) {
-				attackStrength = ((SpaceShip)this.spaceShipList.get(i+4)).getStrength();
-				((Planet)o).nb_spaceShip-= attackStrength;
-				((Planet)o).fleet-= attackStrength;
-				this.nb_spaceShip--;
-				this.fleet--;
+		if (this.owner > 0) {
+			int attackStrength;
+			for(int i=team; i<team+5; i++) {
+				this.spaceShipList.get(i+4).setObjective(o);
+				if (((Planet)o).nb_spaceShip > 0 && ((Planet)o).getOwner() != this.owner ) {
+					attackStrength = ((SpaceShip)this.spaceShipList.get(i+4)).getStrength();
+					((Planet)o).nb_spaceShip-= attackStrength;
+					((Planet)o).fleet-= attackStrength;
+					this.nb_spaceShip--;
+					}
+				else {
+					this.nb_spaceShip--;
+					conquer(o);
+					}
 				}
-			else {
-				this.nb_spaceShip--;
-				conquer(o);
-				}
+			this.team +=5;
 			}
-		this.team +=5;
 		}
 	}

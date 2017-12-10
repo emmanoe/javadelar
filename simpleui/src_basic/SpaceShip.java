@@ -62,10 +62,6 @@ class SpaceShip extends Item {
 			System.out.println("coucou");
 			//((Planet)this.objective).setStock(((Planet)this.objective).stockSize()+1);
 		}
-		else {
-			((Planet)this.objective).destructSpaceship(0);
-		}
-		System.out.println("Stock =" +((Planet)this.objective).stockSize());
 	}
 
 	@Override

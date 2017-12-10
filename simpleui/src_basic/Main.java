@@ -23,16 +23,15 @@ public class Main {
 		 * r: planet space ship production rate in percent, [0,100]
 		 */
 		
-		objectList.add(new Planet(random.nextInt(130)+ 30, random.nextInt(220) + 30 , 40,1,20));
-		objectList.add(new Planet(random.nextInt(130)+210, random.nextInt(220) + 30, 40,2,100));
+		objectList.add(new Planet(random.nextInt(300)+ 30, random.nextInt(220) + 30 ,60,1,20));
+		objectList.add(new Planet(random.nextInt(330)+320, random.nextInt(220) + 30, 60,2,100));
 		
 		/*
 		 * Generates 1 or 2 (randomly) neutrals planets 
 		 */
 		
-		for(int i=0;i< random.nextInt(2)+1;i++) {
-			objectList.add(new Planet(random.nextInt(370)+30, random.nextInt(220) + 250, 40,0,0));
-		}
+		objectList.add(new Planet(random.nextInt(320)+30, random.nextInt(190) + 280, 60,0,0));
+		objectList.add(new Planet(random.nextInt(350)+320, random.nextInt(190) + 280, 60,0,0));
 		
 		/*
 		 * Set all the space ships list in their planet (start from objectList index 4)
@@ -55,7 +54,7 @@ public class Main {
 	
 		
 		Manager manager = new Manager();
-		Run r = new Run(400, 500);
+		Run r = new Run(700, 500);
 
 		/*
 		 * Call the run method of Application providing an initial item Collection, an
