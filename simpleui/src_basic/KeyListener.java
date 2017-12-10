@@ -1,4 +1,4 @@
-package simpleUIApp;
+package src_basic;
 
 import javax.swing.JFrame;
 

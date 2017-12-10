@@ -1,4 +1,4 @@
-package simpleUIApp;
+package src_basic;
 
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package simpleUIApp;
+package src_basic;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -13,7 +13,7 @@ public class Planet extends Item {
 	 */
 	private ArrayList<Item> spaceShipList; 
 	private double nb_spaceShip;
-	private int fleet, rate;
+	private int fleet, team, rate;
 
 	public Planet(double x, double y, int w, int o, int r) {
 		super(x, y, w,o);
@@ -106,7 +106,7 @@ public class Planet extends Item {
 	public void setObjective(Item o) {
 		createSpaceShips();
 		int attackStrength;
-		for(int i=0; i<5; i++) {
+		for(int i=team; i<5; i++) {
 			System.out.println(i);
 			this.spaceShipList.get(i+4).setObjective(o);
 			if (((Planet)o).nb_spaceShip > 0 && ((Planet)o).getOwner() != this.owner ) {
@@ -121,5 +121,6 @@ public class Planet extends Item {
 				conquer(o);
 				}
 			}
+		this.team +=5;
 		}
 	}

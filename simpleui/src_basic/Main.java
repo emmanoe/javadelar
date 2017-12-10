@@ -1,4 +1,4 @@
-package simpleUIApp;
+package src_basic;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;

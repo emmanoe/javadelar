@@ -1,4 +1,4 @@
-package simpleUIApp;
+package src_basic;
 
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
