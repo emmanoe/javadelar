@@ -13,7 +13,7 @@ public class Main {
 		
 		ArrayList<Item> objectList = new ArrayList<Item>();
 		
-		/*
+		/**
 		 * Assign 2 planets per players and add to Item ArrayList
 		 * @param : 
 		 * x: planet x position
@@ -26,14 +26,14 @@ public class Main {
 		objectList.add(new Planet(random.nextInt(300)+ 30, random.nextInt(220) + 30 ,60,1,20));
 		objectList.add(new Planet(random.nextInt(330)+320, random.nextInt(220) + 30, 60,2,100));
 		
-		/*
+		/**
 		 * Generates 1 or 2 (randomly) neutrals planets 
 		 */
 		
 		objectList.add(new Planet(random.nextInt(320)+30, random.nextInt(190) + 280, 60,0,0));
 		objectList.add(new Planet(random.nextInt(350)+320, random.nextInt(190) + 280, 60,0,0));
 		
-		/*
+		/**
 		 * Set all the space ships list in their planet (start from objectList index 4)
 		 * @param:
 		 * x: space ship x position
@@ -56,7 +56,7 @@ public class Main {
 		Manager manager = new Manager();
 		Run r = new Run(700, 500);
 
-		/*
+		/**
 		 * Call the run method of Application providing an initial item Collection, an
 		 * item manager and an ApplicationRunnable
 		 */
