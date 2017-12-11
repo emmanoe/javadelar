@@ -18,6 +18,10 @@ class SpaceShip extends Item {
 		this.objective = o;
 	}
 	
+	public void setOwner(int o) {
+		this.owner = o;
+	}
+	
 	public int getStrength() {
 		return this.strength;
 	}
@@ -71,7 +75,9 @@ class SpaceShip extends Item {
 		if (this.owner == 1)
 			arg0.setColor(Color.blue);
 		if (this.owner == 2)
-				arg0.setColor(Color.magenta);
+			arg0.setColor(Color.magenta);
+		if (this.owner == 0)
+			arg0.setColor(Color.gray);
 		arg0.fillRect(x - w / 2, y - w / 2, w, w);
 	}
 }

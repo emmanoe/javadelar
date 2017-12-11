@@ -101,6 +101,10 @@ public class Planet extends Item {
 	 * @param p the planet to conquer
 	 */
 	public void conquer(Planet p) {
+		if(p.owner ==0)
+			for (int i=0; i<250; i++) {
+				((SpaceShip) p.spaceShipList.toArray()[i]).setOwner(this.owner);
+			}
 		p.setOwner(this.owner);
 		p.setRate(this.rate);
 		p.setFleet(this.fleet);
@@ -127,17 +131,21 @@ public class Planet extends Item {
 	 */
 	@Override
 	public void setObjective(Item o) {
+		Planet p = ((Planet)o);
 		if (this.owner > 0) {
+			
 			int attackStrength;
+			
 			for(int i=team; i<team+5; i++) {
 				this.spaceShipList.get(i+4).setObjective(o);
-				if (((Planet)o).nb_spaceShip > 0 && ((Planet)o).getOwner() != this.owner ) {
+				if ( p.nb_spaceShip > 0 && p.getOwner() != this.owner ) {
 					attackStrength = ((SpaceShip)this.spaceShipList.get(i+4)).getStrength();
-					((Planet)o).nb_spaceShip-= attackStrength;
-					((Planet)o).fleet-= attackStrength;
-					this.nb_spaceShip--;
-					}
+					p.nb_spaceShip-= attackStrength;
+					p.fleet-= attackStrength;
+					this.nb_spaceShip--;}
 				else {
+					if (p.nb_spaceShip>0 && p.getOwner() == this.owner) {
+					}
 					this.nb_spaceShip--;
 					conquer(((Planet)o));
 					}
