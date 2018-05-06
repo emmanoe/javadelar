@@ -7,6 +7,10 @@ Galactic Conquest
 
 > `sudo apt-get install openjdk-8-jdk-headless`
 
+# Déroulement du jeu :
+
+<p align="center"><img width='500px' src="http://emmanoe.delar.emi.u-bordeaux.fr/poo/galaxyc.png" /></p>
+
 # Compiler le programme :
 
 1 - Deplacer vous dans le dossier javadelar/simpleui
